@@ -14,5 +14,13 @@
     "action_taken": "Check state initialization before render",
     "time_ms": 180,
     "success": true
+  },
+  {
+    "timestamp": 1767714297.4946563,
+    "raw_input": "TypeError: Cannot read properties of undefined (reading 'map')",
+    "pattern": "RUNTIME_NULL_ERROR",
+    "action_taken": "Check state initialization before render",
+    "time_ms": 2,
+    "success": true
   }
 ]
