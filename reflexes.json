@@ -1,0 +1,16 @@
+[
+  {
+    "pattern": "RUNTIME_NULL_ERROR",
+    "action": "Check state initialization before render",
+    "seen_count": 2,
+    "success_count": 2,
+    "avg_time_ms": 150.0
+  },
+  {
+    "pattern": "RUNTIME_NULL_ERROR",
+    "action": "Add optional chaining",
+    "seen_count": 1,
+    "success_count": 0,
+    "avg_time_ms": 200
+  }
+]
