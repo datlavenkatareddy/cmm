@@ -41,3 +41,14 @@ def update_reflex(pattern: str, action: str, time_ms: int, success: bool):
     })
 
     save_reflexes(reflexes)
+
+
+def penalize_reflex(pattern: str, action: str):
+    reflexes = load_reflexes()
+
+    for r in reflexes:
+        if r["pattern"] == pattern and r["action"] == action:
+            # penalize by reducing success count
+            r["success_count"] = max(0, r["success_count"] - 1)
+
+    save_reflexes(reflexes)

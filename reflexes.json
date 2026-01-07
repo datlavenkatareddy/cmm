@@ -2,9 +2,9 @@
   {
     "pattern": "RUNTIME_NULL_ERROR",
     "action": "Check state initialization before render",
-    "seen_count": 3,
-    "success_count": 3,
-    "avg_time_ms": 100.66666666666667
+    "seen_count": 4,
+    "success_count": 4,
+    "avg_time_ms": 75.5
   },
   {
     "pattern": "RUNTIME_NULL_ERROR",

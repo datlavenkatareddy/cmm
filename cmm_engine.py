@@ -15,8 +15,11 @@ def handle_input(raw_input: str, reasoning_fn):
 
     if reflex:
         action = reflex["action"]
-        success = True  # assume reflex success initially
         mode = "OVERRIDE"
+
+    # simulate reflex validation (placeholder)
+        success = True  # later this comes from real execution
+
     else:
         action = reasoning_fn(raw_input)
         success = True
@@ -38,6 +41,11 @@ def handle_input(raw_input: str, reasoning_fn):
         time_ms=elapsed_ms,
         success=success
     )
+
+    from reflex_store import penalize_reflex
+
+    if mode == "OVERRIDE" and not success:
+        penalize_reflex(pattern, action)
 
     return {
         "mode": mode,
