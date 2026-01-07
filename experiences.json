@@ -30,5 +30,29 @@
     "action_taken": "Check state initialization before render",
     "time_ms": 0,
     "success": true
+  },
+  {
+    "timestamp": 1767775996.6298544,
+    "raw_input": "TypeError: Cannot read properties of undefined (reading 'map')",
+    "pattern": "RUNTIME_NULL_ERROR",
+    "action_taken": "Check state initialization before render",
+    "time_ms": 0,
+    "success": false
+  },
+  {
+    "timestamp": 1767775996.6521215,
+    "raw_input": "TypeError: Cannot read properties of undefined (reading 'map')",
+    "pattern": "RUNTIME_NULL_ERROR",
+    "action_taken": "Check state initialization before render",
+    "time_ms": 1,
+    "success": false
+  },
+  {
+    "timestamp": 1767775996.65612,
+    "raw_input": "TypeError: Cannot read properties of undefined (reading 'map')",
+    "pattern": "RUNTIME_NULL_ERROR",
+    "action_taken": "Check state initialization before render",
+    "time_ms": 0,
+    "success": false
   }
 ]

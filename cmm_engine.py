@@ -2,28 +2,25 @@ import time
 
 from patterns import extract_pattern
 from override_engine import should_override
-from reflex_store import update_reflex
+from reflex_store import update_reflex, penalize_reflex, record_override_failure
 from logger import log_experience
 
 
-def handle_input(raw_input: str, reasoning_fn):
+def handle_input(raw_input: str, reasoning_fn, execute_fn):
     start_time = time.time()
 
     pattern = extract_pattern(raw_input)
-
     reflex = should_override(pattern)
 
     if reflex:
         action = reflex["action"]
         mode = "OVERRIDE"
-
-    # simulate reflex validation (placeholder)
-        success = True  # later this comes from real execution
-
     else:
         action = reasoning_fn(raw_input)
-        success = True
         mode = "REASONING"
+
+    # EXECUTION HAPPENS HERE (REALITY DECIDES)
+    success = execute_fn(action)
 
     elapsed_ms = int((time.time() - start_time) * 1000)
 
@@ -42,14 +39,14 @@ def handle_input(raw_input: str, reasoning_fn):
         success=success
     )
 
-    from reflex_store import penalize_reflex
-
     if mode == "OVERRIDE" and not success:
         penalize_reflex(pattern, action)
+        record_override_failure(pattern, action)
 
     return {
         "mode": mode,
         "pattern": pattern,
         "action": action,
+        "success": success,
         "time_ms": elapsed_ms
     }
