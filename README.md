@@ -22,3 +22,18 @@ The design and motivation behind this implementation are described in the essay:
 
 **Computational Muscle Memory: A Control-Layer Approach to Fast and Robust Intelligent Systems**  
 https://github.com/datlavenkatareddy/computational-muscle-memory
+
+## 🔬 Verified Experiment
+
+This repository includes a minimal end-to-end experiment demonstrating
+Computational Muscle Memory in action.
+
+**Task:** Resolve a recurring runtime error  
+**Baseline:** Always reason (constant latency)  
+**CMM:** Reason → form reflex → override → near-zero latency  
+
+📁 See [`experiment/`](./experiment) for runnable code and results.
+
+Measured result:
+- Baseline avg latency: ~10 ms
+- CMM avg latency: ~5 ms (drops to 0 ms after reflex formation)
